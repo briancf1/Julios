@@ -1,7 +1,8 @@
 <template>
 <div>
+  <OverlayMenu></OverlayMenu>
   <div class="relative flex items-center justify-center h-screen overflow-hidden">
-    <video 
+    <!-- <video 
       autoplay 
       loop 
       muted 
@@ -9,7 +10,7 @@
     >
       <source src="../assets/sky.mp4" type="video/mp4" />
       Your browser does not support the video tag.
-    </video>
+    </video> -->
     <h1 class="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl">Julio's</h1>
   </div>
 </div>
@@ -17,8 +18,10 @@
 </template>
 
 <script lang="ts">
+import OverlayMenu from '~/components/OverlayMenu.vue';
 
 export default {
-    name: "IndexPage"
+    name: "IndexPage",
+    components: { OverlayMenu }
 }
 </script>
