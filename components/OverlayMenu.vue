@@ -44,13 +44,19 @@ export default defineComponent({
 
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
+@font-face {
+  font-family: "Cardenio";
+  src: local("Cardenio"),
+   url(/CardenioStd.ttf) format("truetype");
+}
+
 $color-background: #F5F5F5;
 $color-main: white;
 $color-active: white;
 $color-link: white;
 $button-height: 27px;
 $button-width: 35px;
-$font-family: 'Merriweather';
+$font-family: 'Cardenio';
 
 body {
 background: $color-background;
