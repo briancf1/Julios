@@ -1,6 +1,10 @@
 {
+  "assets/Logo.svg": {
+    "file": "_nuxt/Logo.ba0892b4.svg",
+    "src": "assets/Logo.svg"
+  },
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "_nuxt/entry.5f5abc27.mjs",
+    "file": "_nuxt/entry.175e6114.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "dynamicImports": [
@@ -8,11 +12,11 @@
       "virtual:nuxt:C:/Users/canch/OneDrive/Documents/GitHub/Julios/.nuxt/error-component.mjs"
     ],
     "css": [
-      "_nuxt/entry.ff7d2b1e.css"
+      "_nuxt/entry.fd914c2a.css"
     ]
   },
   "virtual:nuxt:C:/Users/canch/OneDrive/Documents/GitHub/Julios/.nuxt/error-component.mjs": {
-    "file": "_nuxt/error-component.789180c9.mjs",
+    "file": "_nuxt/error-component.4295736c.mjs",
     "src": "virtual:nuxt:C:/Users/canch/OneDrive/Documents/GitHub/Julios/.nuxt/error-component.mjs",
     "isDynamicEntry": true,
     "imports": [
@@ -24,15 +28,21 @@
     ]
   },
   "pages/index.vue": {
-    "file": "_nuxt/index.57bcdf4f.mjs",
+    "file": "_nuxt/index.5596b98c.mjs",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.mjs"
+    ],
+    "css": [
+      "_nuxt/index.73ba2ca4.css"
+    ],
+    "assets": [
+      "_nuxt/Logo.ba0892b4.svg"
     ]
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
-    "file": "_nuxt/error-404.380abc7f.mjs",
+    "file": "_nuxt/error-404.fd2da9f9.mjs",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -43,7 +53,7 @@
     ]
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
-    "file": "_nuxt/error-500.f108264a.mjs",
+    "file": "_nuxt/error-500.a2eea279.mjs",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -53,12 +63,16 @@
       "_nuxt/error-500.08851880.css"
     ]
   },
+  "pages/index.css": {
+    "file": "_nuxt/index.73ba2ca4.css",
+    "src": "pages/index.css"
+  },
   "node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
     "file": "_nuxt/error-500.08851880.css",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
   },
   "node_modules/nuxt/dist/app/entry.css": {
-    "file": "_nuxt/entry.ff7d2b1e.css",
+    "file": "_nuxt/entry.fd914c2a.css",
     "src": "node_modules/nuxt/dist/app/entry.css"
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {

@@ -1,27 +1,29 @@
 <template>
 <div>
-	<div class="container"></div>
-	<h1>Click The Menu</h1>
-	<p>Be Amazed</p> 
-	<div id="toggle" class="button_container" :class="{active: isActive, inactive: !isActive}">
+	<button v-show="!isActive" type="button" class="button">ORDER ONLINE</button> 
+	<div class="button_container" :class="{active: isActive, inactive: !isActive}" @click="enableMenu">
 		<span class="top"></span>
 		<span class="middle"></span>
 		<span class="bottom"></span>
 	</div>
-	<div id="overlay" class="overlay">
-		<nav class="overlay-menu"></nav>
+	<div id="overlay" class="overlay" :class="{open: isActive}">
+		<nav class="overlay-menu">
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Work</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">MENU</a></li>
+				<li><a href="#">ORDER ONLINE</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">CONTACT US</a></li>
 			</ul>
+		</nav>
 	</div>
 </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
 	name: 'OverlayMenu',
 	data() {
 		return {
@@ -29,34 +31,39 @@ export default {
 		}
 	},
 	methods: {
-		enableMenu() {
+		enableMenu(): void {
 			this.isActive = !this.isActive;
+			this.$emit('isOverlayActive', this.isActive);
 		}
 	}
 	
-}
+})
 </script>
 
 <style lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
 $color-background: #F5F5F5;
-$color-main: #1abc9c;
-$color-active: #FFF;
-$color-link: #FFF;
+$color-main: #49541D;
+$color-active: #49541D;
+$color-link: white;
 $button-height: 27px;
 $button-width: 35px;
+$font-family: 'Merriweather';
+
 body {
 background: $color-background;
 }
+
 .container {
 	position: absolute;
 	width: 100%;
-	height: 100%;
 	text-align: center;
-	top: 40%;
+	top: 30%;
 	left: 0;
 	margin:  0 auto;
-	font-family: 'Varela Round', sans-serif;
+	font-family: $font-family;
 	p {
 		font-size: 20px;
 	}
@@ -89,15 +96,16 @@ background: $color-background;
 		}
 	}
 }
-h1 {
+
+img {
 	position: relative;
-	text-align: center;
-	font-family: 'Varela Round', serif;
+	max-width: 300px;
 }
+
 .button_container {
 	position: fixed;
 	top: 5%;
-	right: 2%;
+	right: 10%;
 	height: $button-height;
 	width: $button-width;
 	cursor: pointer;
@@ -160,45 +168,50 @@ h1 {
 		}
 	}
 }
+
 .overlay {
 	position: fixed;
-	background: $color-main;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 0%;
 	opacity: 0;
 	visibility: hidden;
+	backdrop-filter: blur(17px);
 	transition: opacity .35s, visibility .35s, height .35s;
 	overflow: hidden;
+	background: transparent;
 	
 	&.open {
-		opacity: .9;
+		opacity: 1;
 		visibility: visible;
 		height: 100%;
 		
 		li {
-		animation: fadeInRight .5s ease forwards;
-		animation-delay: .35s;
+		animation: fadeInTop .75s ease forwards;
+		animation-delay: .4s;
 		
 			&:nth-of-type(2) {
 				animation-delay: .4s;
 			}
 			&:nth-of-type(3) {
-				animation-delay: .45s;
+				animation-delay: .60s;
 			}
 			&:nth-of-type(4) {
-				animation-delay: .50s;
+				animation-delay: .80s;
+			}
+			&:nth-of-type(5) {
+				animation-delay: 1s;
 			}
 		}
 	}
 	nav {
 		position: relative;
 		height: 70%;
-		top: 50%;
+		top: 60%;
 		transform: translateY(-50%);
-		font-size: 50px;
-		font-family: 'Varela Round', serif;
+		font-size: 30px;
+		font-family: $font-family;
 		font-weight: 400;
 		text-align: center;
 	}
@@ -213,7 +226,7 @@ h1 {
 		li {
 		display: block;
 		height: 25%;
-		height: calc(100% / 4);
+		height: calc(100% / 8);
 		min-height: 50px;
 		position: relative;
 		opacity: 0;
@@ -246,14 +259,46 @@ h1 {
 		}
 	}
 }
-@keyframes fadeInRight {
+
+.button {
+	text-transform: uppercase;
+    letter-spacing: .05em;
+    color: $color-link;
+    font-feature-settings: "smcp";
+    font-variant: small-caps;
+    font-size: 2.125rem;
+    line-height: 1;
+    height: 2.75rem;
+    min-width: 8.625rem;
+    border: 1px solid;
+    padding: .1875em .4em;
+    transition: color .5s,background-color .5s,border-color .5s;
+	appearance: none;
+	background: none;
+	border-radius: 0;
+	font-family: $font-family;
+	top: 4.5%;
+	position: fixed;
+	left: 10%;
+	cursor: pointer;
+}
+
+$breakpoint-phone: 767px;
+@media (max-width: $breakpoint-phone) {
+	.button {
+		font-size: 1.25rem;
+		top:4%;
+	}
+}
+
+@keyframes fadeInTop {
 	0% {
 		opacity: 0;
-		left: 20%;
+		top: 20%;
 	}
 	100% {
 		opacity: 1;
-		left: 0;
+		top: 0;
 	}
 }
 </style>

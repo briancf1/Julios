@@ -2572,7 +2572,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_0$1 = defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_0$2 = defineNuxtLink({ componentName: "NuxtLink" });
 function useHead(meta2) {
   const resolvedMeta = isFunction_1(meta2) ? vue_cjs_prod.computed(meta2) : meta2;
   useNuxtApp()._useHead(resolvedMeta);
@@ -3328,6 +3328,37 @@ const Component = vue_cjs_prod.defineComponent({
     return () => vue_cjs_prod.h(props.routeProps.Component);
   }
 });
+const _sfc_main$2 = vue_cjs_prod.defineComponent({
+  name: "OverlayMenu",
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  methods: {
+    enableMenu() {
+      this.isActive = !this.isActive;
+      this.$emit("isOverlayActive", this.isActive);
+    }
+  }
+});
+const _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
+function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}><button style="${serverRenderer.exports.ssrRenderStyle(!_ctx.isActive ? null : { display: "none" })}" type="button" class="button">ORDER ONLINE</button><div class="${serverRenderer.exports.ssrRenderClass([{ active: _ctx.isActive, inactive: !_ctx.isActive }, "button_container"])}"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div><div id="overlay" class="${serverRenderer.exports.ssrRenderClass([{ open: _ctx.isActive }, "overlay"])}"><nav class="overlay-menu"><ul><li><a href="#">HOME</a></li><li><a href="#">MENU</a></li><li><a href="#">ORDER ONLINE</a></li><li><a href="#">ABOUT US</a></li><li><a href="#">CONTACT US</a></li></ul></nav></div></div>`);
+}
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/OverlayMenu.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const __nuxt_component_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["ssrRender", _sfc_ssrRender$1]]);
 const meta = void 0;
 const routes = [
   {
@@ -3337,7 +3368,7 @@ const routes = [
     children: [],
     meta,
     alias: [],
-    component: () => import('./index.e6d7aaa5.mjs').then((m) => m.default || m)
+    component: () => import('./index.0b0b5c77.mjs').then((m) => m.default || m)
   }
 ];
 const configRouterOptions = {};
@@ -3478,7 +3509,7 @@ const _sfc_main$1 = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = vue_cjs_prod.defineAsyncComponent(() => import('./error-component.9e166287.mjs'));
+    const ErrorComponent = vue_cjs_prod.defineAsyncComponent(() => import('./error-component.68ed56b3.mjs'));
     const nuxtApp = useNuxtApp();
     vue_cjs_prod.provide("_route", useRoute());
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
@@ -3533,13 +3564,6 @@ const __nuxt_component_0 = vue_cjs_prod.defineComponent({
     };
   }
 });
-const _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
-  }
-  return target;
-};
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   const _component_NuxtLayout = __nuxt_component_0;
@@ -3588,5 +3612,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { _export_sfc as _, __nuxt_component_0$1 as a, entry$1 as default, useHead as u, vue_cjs_prod as v };
+export { __nuxt_component_0$1 as _, _export_sfc as a, __nuxt_component_0$2 as b, entry$1 as default, useHead as u, vue_cjs_prod as v };
 //# sourceMappingURL=server.mjs.map
