@@ -86,4 +86,28 @@ video {
   width: 100%;
   height: 100%;
 }
+
+img{
+  max-width: 800px;
+  width: 35%;
+}
+
+@media (max-width: 1080px) {
+	img{
+    width: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+	img{
+    width: 60%;
+  }
+}
+
+@media (max-width: 450px) {
+	img{
+    width: 75%;
+  }
+}
+
 </style>
