@@ -179,6 +179,7 @@ background: $color-background;
 	opacity: 0;
 	visibility: hidden;
 	backdrop-filter: blur(17px);
+	-webkit-backdrop-filter: blur(17px);
 	transition: opacity .35s, visibility .35s, height .35s;
 	overflow: hidden;
 	background: transparent;
