@@ -5,7 +5,7 @@
 		<img v-if="!isActive" src="../assets/Logo.svg" alt="Julio's Mexican Street Food">
 	</div>
   <div class="main-content">
-    <video id="video" autoplay loop muted>
+    <video id="video" autoplay loop muted poster="/poster.png">
       <source :src="videoSource" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -29,14 +29,14 @@ export default defineComponent({
   },
   computed: {
     videoSource(): string{
-      const imgUrl = new URL('/LoopDesktop.mp4', import.meta.url)
-      // if (this.windowWidth > 820) {
-      //   imgUrl = new URL('/LoopDesktop.mp4', import.meta.url)
-      // } else if(this.windowWidth > 390) {
-      //   imgUrl = new URL('/LoopTablet.mp4',import.meta.url)
-      // } else {
-      //   imgUrl = new URL('/LoopMobile.mp4',import.meta.url)
-      // }
+      let imgUrl
+      if (this.windowWidth > 820) {
+        imgUrl = new URL('/LoopDesktop.mp4', import.meta.url)
+      } else if(this.windowWidth > 390) {
+        imgUrl = new URL('/LoopTablet.mp4',import.meta.url)
+      } else {
+        imgUrl = new URL('/LoopMobile.mp4',import.meta.url)
+      }
 
       this.reload()
       return imgUrl.toString()
