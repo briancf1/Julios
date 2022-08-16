@@ -2,7 +2,7 @@
 <div>
   <OverlayMenu @isOverlayActive="isOverlayActive"></OverlayMenu>
   <div class="container">
-		<img v-if="!isActive" src="../assets/Logo.svg" alt="Julio's Mexican Street Food">
+		<img v-if="!isActive" src="../assets/LogoWhite.svg" alt="Julio's Mexican Street Food">
 	</div>
   <div class="main-content">
     <video id="video" autoplay loop muted poster="/poster.png">
@@ -27,6 +27,19 @@ export default defineComponent({
       windowWidth: 0,
     }
   },
+  head: {
+    title: 'Julio\'s',
+    htmlAttrs: {
+      lang: 'en',
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   computed: {
     videoSource(): string{
       let imgUrl
@@ -46,6 +59,7 @@ export default defineComponent({
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     })
+    this.onResize();
   },
   beforeDestroy() { 
     window.removeEventListener('resize', this.onResize); 
@@ -90,6 +104,7 @@ video {
 img{
   max-width: 800px;
   width: 35%;
+  position: relative;
 }
 
 @media (max-width: 1080px) {

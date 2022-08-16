@@ -45,8 +45,8 @@ export default defineComponent({
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
 $color-background: #F5F5F5;
-$color-main: #49541D;
-$color-active: #49541D;
+$color-main: white;
+$color-active: white;
 $color-link: white;
 $button-height: 27px;
 $button-width: 35px;
@@ -95,11 +95,6 @@ background: $color-background;
 			width: 100%;
 		}
 	}
-}
-
-img {
-	position: relative;
-	max-width: 300px;
 }
 
 .button_container {
