@@ -50,7 +50,7 @@ export default defineComponent({
    url(/CardenioStd.ttf) format("truetype");
 }
 
-$color-background: #F5F5F5;
+$color-background: #425123;
 $color-main: white;
 $color-active: white;
 $color-link: white;
