@@ -212,7 +212,7 @@ background: $color-background;
 		height: 70%;
 		top: 60%;
 		transform: translateY(-50%);
-		font-size: 30px;
+		font-size: 50px;
 		font-family: $font-family;
 		font-weight: 400;
 		text-align: center;
@@ -228,7 +228,7 @@ background: $color-background;
 		li {
 		display: block;
 		height: 25%;
-		height: calc(100% / 8);
+		height: calc(100% / 5);
 		min-height: 50px;
 		position: relative;
 		opacity: 0;

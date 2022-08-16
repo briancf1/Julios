@@ -107,6 +107,12 @@ img{
   position: relative;
 }
 
+@media (max-width: 1200px) {
+	img{
+    width: 40%;
+  }
+}
+
 @media (max-width: 1080px) {
 	img{
     width: 50%;
