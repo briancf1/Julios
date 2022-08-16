@@ -210,7 +210,7 @@ background: $color-background;
 	nav {
 		position: relative;
 		height: 70%;
-		top: 60%;
+		top: 55%;
 		transform: translateY(-50%);
 		font-size: 50px;
 		font-family: $font-family;
