@@ -268,9 +268,9 @@ background: $color-background;
     color: $color-link;
     font-feature-settings: "smcp";
     font-variant: small-caps;
-    font-size: 2.125rem;
+    font-size: 3.125rem;
     line-height: 1;
-    height: 2.75rem;
+    height: 4rem;
     min-width: 8.625rem;
     border: 1px solid;
     padding: .1875em .4em;
@@ -279,7 +279,7 @@ background: $color-background;
 	background: none;
 	border-radius: 0;
 	font-family: $font-family;
-	top: 4.5%;
+	top: 3.5%;
 	position: fixed;
 	left: 10%;
 	cursor: pointer;
@@ -288,8 +288,8 @@ background: $color-background;
 $breakpoint-phone: 767px;
 @media (max-width: $breakpoint-phone) {
 	.button {
-		font-size: 1.25rem;
-		top:4%;
+		font-size: 2.25rem;
+		top: 3%;
 	}
 }
 
