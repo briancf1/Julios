@@ -288,7 +288,7 @@ background: $color-background;
 $breakpoint-phone: 767px;
 @media (max-width: $breakpoint-phone) {
 	.button {
-		font-size: 2.25rem;
+		font-size: 2.00rem;
 		top: 3%;
 	}
 }
