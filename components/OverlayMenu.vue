@@ -1,6 +1,8 @@
 <template>
 <div>
-	<button v-show="!isActive" type="button" class="button">ORDER ONLINE</button> 
+	<a href="https://juliosmexican.square.site">
+		<button v-show="!isActive" type="button" class="button">ORDER ONLINE</button>
+	</a>
 	<div class="button_container" :class="{active: isActive, inactive: !isActive}" @click="enableMenu">
 		<span class="top"></span>
 		<span class="middle"></span>
