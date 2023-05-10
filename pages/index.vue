@@ -5,10 +5,12 @@
 		<img v-if="!isActive" src="../assets/LogoWhite.svg" alt="Julio's Mexican Street Food">
 	</div>
   <div class="main-content">
-    <video id="video" autoplay poster="/poster.png" loop muted playsinline>
-      <source :src="videoSource" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <client-only>
+      <video id="video" autoplay poster="/poster.png" loop muted playsinline>
+        <source :src="videoSource" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+  </client-only>
   </div>
 </div>
   
