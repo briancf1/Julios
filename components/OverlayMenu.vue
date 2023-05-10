@@ -1,6 +1,8 @@
 <template>
 <div>
-	<button v-show="!isActive" type="button" class="button">ORDER ONLINE</button> 
+	<a href="https://juliosmexican.square.site">
+		<button v-show="!isActive" type="button" class="button">ORDER ONLINE</button>
+	</a>
 	<div class="button_container" :class="{active: isActive, inactive: !isActive}" @click="enableMenu">
 		<span class="top"></span>
 		<span class="middle"></span>
@@ -11,7 +13,7 @@
 			<ul>
 				<li><a href="#">HOME</a></li>
 				<li><a href="#">MENU</a></li>
-				<li><a href="#">ORDER ONLINE</a></li>
+				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
 				<li><a href="#">ABOUT US</a></li>
 				<li><a href="#">CONTACT US</a></li>
 			</ul>
