@@ -8,15 +8,43 @@
 		<span class="middle"></span>
 		<span class="bottom"></span>
 	</div>
+	<div class="button_container_back" :class="{aboutUsActive: aboutUsIsActive, aboutUsInactive: !aboutUsIsActive}" @click="enableAboutUs">
+		<span class="top"></span>
+		<span class="middle"></span>
+		<span class="bottom"></span>
+	</div>
 	<div id="overlay" class="overlay" :class="{open: isActive}">
 		<nav class="overlay-menu">
-			<ul>
-				<li><a href="#">HOME</a></li>
+			<ul :style="{display: tocIsActive ? 'inline-block': 'none'}">
 				<li><a href="#">MENU</a></li>
 				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
-				<li><a href="#">ABOUT US</a></li>
+				<li><a @click="enableAboutUs">ABOUT US</a></li>
 				<li><a href="#">CONTACT US</a></li>
+				<li><a href="#">PHOTOS</a></li>
 			</ul>
+			<div class="aboutUs" :class="{aboutUsActive: aboutUsIsActive, aboutUsInactive: !aboutUsIsActive}">
+				<p id="aboutUsHeader">ABOUT US</p>
+				<p>
+					Known by his friends and loved ones as “Julio”, Julian Canchola a 20+ year Cape May Local, 
+					never lost his passion for the flavors of his home country. Born in Mexico City, he and 
+					wife Alma came to the United States in 1999 with their two young sons aspiring for nothing 
+					more than to provide their children with the ‘American Dream’.
+				</p>
+				<p>
+					Having worked a variety of jobs in his early life, from mailman to accountant, (no seriously...you should see the books)
+					 it was his first experience as a line cook at the Virginia Hotel that sparked it all. From then on,
+					  there was no stopping Chef Julio, as he had found what brings him the most joy in life, serving
+					   the Cape May community through his food.
+				</p>
+				<p>While without Julio there would inherently be no Julio’s, it was his youngest son Dennis Canchola who made opening a 
+					restaurant in his father’s name possible. Together, they built upon their shared love of food from the ground up, 
+					making each decision hand-in-hand, Julio’s ultimately became so much more than a family dream.
+				</p>
+				<p id="noteHeader">Note from the Cancholas</p>
+				<p class="note">We are so excited to invite you into the space we curated and to feed you this Summer!</p>
+				<p class="note">Can’t wait to see you soon!</p>
+				<p class="note" style="text-align: end;">Julio & Dennis</p>
+			</div>
 		</nav>
 	</div>
 </div>
@@ -29,13 +57,22 @@ export default defineComponent({
 	name: 'OverlayMenu',
 	data() {
 		return {
-			isActive: false
+			isActive: false,
+			aboutUsIsActive: false,
+			tocIsActive: false
 		}
 	},
 	methods: {
 		enableMenu(): void {
 			this.isActive = !this.isActive;
+			this.tocIsActive = true;
+			this.aboutUsIsActive = false;
 			this.$emit('isOverlayActive', this.isActive);
+		},
+		enableAboutUs(): void {
+			this.aboutUsIsActive = !this.aboutUsIsActive;
+			this.tocIsActive = !this.tocIsActive;
+			//this.$emit('isOverlayActive', this.aboutUsIsActive);
 		}
 	}
 	
@@ -51,6 +88,11 @@ export default defineComponent({
   src: local("Cardenio"),
    url(/CardenioStd.ttf) format("truetype");
 }
+@font-face {
+  font-family: "CardenioBold";
+  src: local("CardenioBold"),
+   url(/CardenioModernBold.ttf) format("truetype");
+}
 
 $color-background: #181C0B;
 $color-main: white;
@@ -62,6 +104,71 @@ $font-family: 'Cardenio';
 
 body {
 background: $color-background;
+}
+
+.aboutUs {
+	transform: translateY(-5vh);
+}
+
+#aboutUsHeader, #noteHeader{
+	font-family: 'CardenioBold';
+	font-size: 35px;
+}
+
+.note{
+	font-style: italic;
+}
+
+.aboutUsActive{
+	display: inline-block;
+	text-align: left;
+	color: $color-active;
+	width: 75%;
+	font-size: 25px;
+	overflow-y: scroll;
+	height: 80vh;
+	scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+	p {
+		animation: fadeInTop_p 3s ease forwards;
+		animation-delay: .4s;
+		opacity: 0;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		
+			&:nth-of-type(2) {
+				animation-delay: .4s;
+			}
+			&:nth-of-type(3) {
+				animation-delay: .60s;
+			}
+			&:nth-of-type(4) {
+				animation-delay: .80s;
+			}
+			&:nth-of-type(5) {
+				animation-delay: 1s;
+			}
+			&:nth-of-type(6) {
+				animation-delay: 1.2s;
+			}
+			&:nth-of-type(7) {
+				animation-delay: 1.4s;
+			}
+			&:nth-of-type(8) {
+				animation-delay: 1.6s;
+			}
+		}
+}
+
+.aboutUsActive::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.aboutUsInactive{
+	display: none;
 }
 
 .container {
@@ -149,6 +256,57 @@ background: $color-background;
 		transform: translateY(-11px) translateX(0) rotate(-90deg);
 		background: $color-main;
 		}
+	}
+
+	span {
+		background: $color-main;
+		border: none;
+		height: 5px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition:  all .35s ease;
+		cursor: pointer;
+		
+		&:nth-of-type(2) {
+		top: 11px;
+		}
+		
+		&:nth-of-type(3) {
+		top: 22px;
+		}
+	}
+}
+
+.button_container_back {
+	position: fixed;
+	top: 5%;
+	left: 10%;
+	height: $button-height;
+	width: $button-width;
+	cursor: pointer;
+	z-index: 100;
+	transition: opacity .25s ease;
+
+	&:hover {
+		opacity: .7;
+	}
+	
+	.top {
+		transform: translateY(6px) translateX(-2px) rotate(-45deg);
+		background: $color-active;
+		width: 50%;
+	}
+
+	.middle {
+		background: $color-active;
+	}
+		
+	.bottom {
+		transform: translateY(-6px) translateX(-2px) rotate(45deg);
+		background: $color-active;
+		width: 50%
 	}
 
 	span {
@@ -304,5 +462,10 @@ $breakpoint-phone: 767px;
 		opacity: 1;
 		top: 0;
 	}
+}
+
+@keyframes fadeInTop_p {
+	from {transform: translateY(100px); opacity: 0;}
+    to {transform: translateY(0px); opacity: 1;}
 }
 </style>
