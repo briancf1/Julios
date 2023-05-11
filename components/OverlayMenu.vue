@@ -20,7 +20,7 @@
 				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
 				<li><a @click="enableAboutUs">ABOUT US</a></li>
 				<li><a href="#">CONTACT US</a></li>
-				<li><a href="https://www.instagram.com/julioscapemay/">PHOTOS</a></li>
+				<li><a href="https://www.instagram.com/julioscapemay">PHOTOS</a></li>
 			</ul>
 			<div class="aboutUs" :class="{aboutUsActive: aboutUsIsActive, aboutUsInactive: !aboutUsIsActive}">
 				<p id="aboutUsHeader">ABOUT US</p>

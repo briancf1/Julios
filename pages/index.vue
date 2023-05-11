@@ -14,7 +14,7 @@
   </div>
   <div class="socialMediaIcons">
     <a v-if="!isActive" href="https://www.facebook.com/JuliosCapeMay"><img src="/facebookIcon.svg" id="facebookIcon"></a>
-    <a v-if="!isActive" href="https://www.instagram.com/julioscapemay/"><img src="/instagramIcon.svg" id="instagramIcon"></a>
+    <a v-if="!isActive" href="https://www.instagram.com/julioscapemay"><img src="/instagramIcon.svg" id="instagramIcon"></a>
   </div>
 </div>
   
