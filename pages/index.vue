@@ -131,8 +131,9 @@ img{
 #instagramIcon{
   max-width: 34px;
   min-width: 34px;
-  margin: 5px;
+  margin: 10px;
   padding-right: 20px;
+  padding-top: 4px;
 }
 
 @media (max-width: 1200px) {
