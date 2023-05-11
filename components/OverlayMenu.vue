@@ -20,7 +20,7 @@
 				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
 				<li><a @click="enableAboutUs">ABOUT US</a></li>
 				<li><a href="#">CONTACT US</a></li>
-				<li><a href="#">PHOTOS</a></li>
+				<li><a href="https://www.instagram.com/julioscapemay/">PHOTOS</a></li>
 			</ul>
 			<div class="aboutUs" :class="{aboutUsActive: aboutUsIsActive, aboutUsInactive: !aboutUsIsActive}">
 				<p id="aboutUsHeader">ABOUT US</p>
@@ -131,7 +131,7 @@ background: $color-background;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 
 	p {
-		animation: fadeInTop_p 3s ease forwards;
+		animation: fadeInTop_p 1s ease forwards;
 		animation-delay: .4s;
 		opacity: 0;
 		max-width: 800px;
@@ -443,6 +443,16 @@ background: $color-background;
 	position: fixed;
 	left: 10%;
 	cursor: pointer;
+}
+
+.socialMediaIcons{
+  position: fixed;
+  bottom: 0;
+}
+
+#facebookIcon{
+  max-width: 25px;
+  min-width: 25px;
 }
 
 $breakpoint-phone: 767px;

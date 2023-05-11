@@ -10,7 +10,11 @@
         <source :src="videoSource" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-  </client-only>
+    </client-only>
+  </div>
+  <div class="socialMediaIcons">
+    <a v-if="!isActive" href="https://www.facebook.com/JuliosCapeMay"><img src="/facebookIcon.svg" id="facebookIcon"></a>
+    <a v-if="!isActive" href="https://www.instagram.com/julioscapemay/"><img src="/instagramIcon.svg" id="instagramIcon"></a>
   </div>
 </div>
   
@@ -107,6 +111,28 @@ img{
   max-width: 800px;
   width: 35%;
   position: relative;
+}
+
+.socialMediaIcons{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#facebookIcon{
+  max-width: 25px;
+  min-width: 25px;
+  margin: 5px;
+}
+
+#instagramIcon{
+  max-width: 34px;
+  min-width: 34px;
+  margin: 5px;
+  padding-right: 20px;
 }
 
 @media (max-width: 1200px) {
