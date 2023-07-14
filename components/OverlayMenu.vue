@@ -50,7 +50,7 @@
 				<p class="note">Can’t wait to see you soon!</p>
 				<p class="note" style="text-align: end;">Julio & Dennis</p>
 			</div>
-			<div class="contactUs" :class="{concatUsActive: contactUsIsActive, contactUsInactive: !contactUsIsActive}">
+			<div class="contactUs" :class="{contactUsActive: contactUsIsActive, contactUsInactive: !contactUsIsActive}">
 				<p id="contactUsHeader">CONTACT US</p>
 				<p>Julio's Mexican Street Food</p>
 				<p>210 N Main St, Cape May Court House, NJ 08210</p>
@@ -140,9 +140,52 @@ background: $color-background;
 	font-style: italic;
 }
 
-.aboutUsActive, .contactUsActive{
+.aboutUsActive{
 	display: inline-block;
 	text-align: left;
+	color: $color-active;
+	width: 75%;
+	font-size: 25px;
+	overflow-y: scroll;
+	height: 80vh;
+	scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+	p {
+		animation: fadeInTop_p 1s ease forwards;
+		animation-delay: .4s;
+		opacity: 0;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		
+			&:nth-of-type(2) {
+				animation-delay: .4s;
+			}
+			&:nth-of-type(3) {
+				animation-delay: .60s;
+			}
+			&:nth-of-type(4) {
+				animation-delay: .80s;
+			}
+			&:nth-of-type(5) {
+				animation-delay: 1s;
+			}
+			&:nth-of-type(6) {
+				animation-delay: 1.2s;
+			}
+			&:nth-of-type(7) {
+				animation-delay: 1.4s;
+			}
+			&:nth-of-type(8) {
+				animation-delay: 1.6s;
+			}
+		}
+}
+
+.contactUsActive{
+	display: inline-block;
+	text-align: center;
 	color: $color-active;
 	width: 75%;
 	font-size: 25px;
