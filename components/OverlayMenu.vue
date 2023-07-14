@@ -55,9 +55,11 @@
 				<p>Julio's Mexican Street Food</p>
 				<p>210 N Main St, Cape May Court House, NJ 08210</p>
 				<p><a href="https://goo.gl/maps/FWGw86SzFyzU5iyD9">Google Maps</a></p>
+				&nbsp; &nbsp;
 				<p>(856) 542-9320</p>
+				&nbsp; &nbsp;
 				<p><a href="mailto: info@julioscapemay.com">info@julioscapemay.com</a></p>
-				<p>Design and Development by Brian Canchola-Fenochio</p>
+				<p class="siteCreator">Design and Development by Brian Canchola-Fenochio</p>
 				<!--need to add address, google directions, phone number, email, my name--> 
 			</div>
 		</nav>
@@ -125,6 +127,20 @@ $font-family: 'Cardenio';
 
 body {
 background: $color-background;
+}
+
+.siteCreator{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.contactUs p a {
+				color: $color-link;
+				text-decoration: none;
 }
 
 .aboutUs, .contactUs {
