@@ -56,7 +56,7 @@
 				<p>210 N Main St, Cape May Court House, NJ 08210</p>
 				<p><a href="https://goo.gl/maps/FWGw86SzFyzU5iyD9">Google Maps</a></p>
 				&nbsp; &nbsp;
-				<p>(856) 542-9320</p>
+				<p><a href="tel:8565429320">(856) 542-9320</a></p>
 				&nbsp; &nbsp;
 				<p><a href="mailto: info@julioscapemay.com">info@julioscapemay.com</a></p>
 				<!--need to add address, google directions, phone number, email, my name--> 
