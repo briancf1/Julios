@@ -84,6 +84,7 @@ export default defineComponent({
 			this.isActive = !this.isActive;
 			this.tocIsActive = true;
 			this.aboutUsIsActive = false;
+			this.contactUsIsActive = false;
 			this.$emit('isOverlayActive', this.isActive);
 		},
 		enableAboutUs(): void {
