@@ -16,7 +16,7 @@
 	<div id="overlay" class="overlay" :class="{open: isActive}">
 		<nav class="overlay-menu">
 			<ul :style="{display: tocIsActive ? 'inline-block': 'none'}">
-				<li><a href="#">MENU</a></li>
+				<li><a href="/menu.pdf">MENU</a></li>
 				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
 				<li><a @click="enableAboutUs">ABOUT US</a></li>
 				<li><a href="#">CONTACT US</a></li>
