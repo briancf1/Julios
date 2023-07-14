@@ -132,15 +132,29 @@ background: $color-background;
 .siteCreator{
   position: fixed;
   bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
 .contactUs p a {
-				color: $color-link;
-				text-decoration: none;
+	color: $color-link;
+	text-decoration: none;
+
+	&:hover:after,
+	&:focus:after,
+	&:active:after {
+		width: 100%;
+	}
+				
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0%;
+		transform: translateX(-50%);
+		height: 3px;
+		background: $color-link;
+		transition: .35s;
+	}
 }
 
 .aboutUs, .contactUs {
