@@ -13,13 +13,18 @@
 		<span class="middle"></span>
 		<span class="bottom"></span>
 	</div>
+	<div class="button_container_back" :class="{contactUsActive: contactUsIsActive, contactUsInactive: !contactUsIsActive}" @click="enableContactUs">
+		<span class="top"></span>
+		<span class="middle"></span>
+		<span class="bottom"></span>
+	</div>
 	<div id="overlay" class="overlay" :class="{open: isActive}">
 		<nav class="overlay-menu">
 			<ul :style="{display: tocIsActive ? 'inline-block': 'none'}">
 				<li><a href="/menu.pdf">MENU</a></li>
 				<li><a href="https://juliosmexican.square.site">ORDER ONLINE</a></li>
 				<li><a @click="enableAboutUs">ABOUT US</a></li>
-				<li><a href="#">CONTACT US</a></li>
+				<li><a @click="enableContactUs">CONTACT US</a></li>
 				<li><a href="https://www.instagram.com/julioscapemay">PHOTOS</a></li>
 			</ul>
 			<div class="aboutUs" :class="{aboutUsActive: aboutUsIsActive, aboutUsInactive: !aboutUsIsActive}">
@@ -45,6 +50,16 @@
 				<p class="note">Can’t wait to see you soon!</p>
 				<p class="note" style="text-align: end;">Julio & Dennis</p>
 			</div>
+			<div class="contactUs" :class="{concatUsActive: contactUsIsActive, contactUsInactive: !contactUsIsActive}">
+				<p id="contactUsHeader">CONTACT US</p>
+				<p>Julio's Mexican Street Food</p>
+				<p>210 N Main St, Cape May Court House, NJ 08210</p>
+				<p><a href="https://goo.gl/maps/FWGw86SzFyzU5iyD9">Google Maps</a></p>
+				<p>(856) 542-9320</p>
+				<p><a href="mailto: info@julioscapemay.com">info@julioscapemay.com</a></p>
+				<p>Design and Development by Brian Canchola-Fenochio</p>
+				<!--need to add address, google directions, phone number, email, my name--> 
+			</div>
 		</nav>
 	</div>
 </div>
@@ -59,6 +74,7 @@ export default defineComponent({
 		return {
 			isActive: false,
 			aboutUsIsActive: false,
+			contactUsIsActive: false,
 			tocIsActive: false
 		}
 	},
@@ -71,6 +87,11 @@ export default defineComponent({
 		},
 		enableAboutUs(): void {
 			this.aboutUsIsActive = !this.aboutUsIsActive;
+			this.tocIsActive = !this.tocIsActive;
+			//this.$emit('isOverlayActive', this.aboutUsIsActive);
+		},
+		enableContactUs(): void {
+			this.contactUsIsActive = !this.contactUsIsActive;
 			this.tocIsActive = !this.tocIsActive;
 			//this.$emit('isOverlayActive', this.aboutUsIsActive);
 		}
@@ -106,11 +127,11 @@ body {
 background: $color-background;
 }
 
-.aboutUs {
+.aboutUs, .contactUs {
 	transform: translateY(-5vh);
 }
 
-#aboutUsHeader, #noteHeader{
+#aboutUsHeader, #noteHeader, #contactUsHeader{
 	font-family: 'CardenioBold';
 	font-size: 35px;
 }
@@ -119,7 +140,7 @@ background: $color-background;
 	font-style: italic;
 }
 
-.aboutUsActive{
+.aboutUsActive, .contactUsActive{
 	display: inline-block;
 	text-align: left;
 	color: $color-active;
@@ -162,12 +183,12 @@ background: $color-background;
 		}
 }
 
-.aboutUsActive::-webkit-scrollbar { /* WebKit */
+.aboutUsActive::-webkit-scrollbar, .contactUsActive::-webkit-scrollbar { /* WebKit */
     width: 0;
     height: 0;
 }
 
-.aboutUsInactive{
+.aboutUsInactive, .contactUsInactive{
 	display: none;
 }
 
