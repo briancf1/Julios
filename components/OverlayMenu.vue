@@ -59,7 +59,6 @@
 				<p>(856) 542-9320</p>
 				&nbsp; &nbsp;
 				<p><a href="mailto: info@julioscapemay.com">info@julioscapemay.com</a></p>
-				<p class="siteCreator">Design and Development by Brian Canchola-Fenochio</p>
 				<!--need to add address, google directions, phone number, email, my name--> 
 			</div>
 		</nav>
@@ -136,25 +135,6 @@ background: $color-background;
 
 .contactUs p a {
 	color: $color-link;
-	text-decoration: none;
-
-	&:hover:after,
-	&:focus:after,
-	&:active:after {
-		width: 100%;
-	}
-				
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		width: 0%;
-		transform: translateX(-50%);
-		height: 3px;
-		background: $color-link;
-		transition: .35s;
-	}
 }
 
 .aboutUs, .contactUs {
