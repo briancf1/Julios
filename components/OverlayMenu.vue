@@ -52,7 +52,7 @@
 			</div>
 			<div class="contactUs" :class="{contactUsActive: contactUsIsActive, contactUsInactive: !contactUsIsActive}">
 				<p id="contactUsHeader">CONTACT US</p>
-				<p>Open 11AM-9PM Daily</p>
+				<p>Open 11AM-8PM Daily During Offseason</p>
 				&nbsp; &nbsp;
 				<p>Julio's Mexican Street Food</p>
 				<p>210 N Main St, Cape May Court House, NJ 08210</p>
